@@ -27,6 +27,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Spieler spielerObjekt;
+    QStringList Spielerliste;
 };
 #endif // MAINWINDOW_H

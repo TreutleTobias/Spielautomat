@@ -31,7 +31,7 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
 {
     QString name = ui->Eingabe->text(); // getText() wurde zu text() geändert
 
-    spielerObjekt.Spieler_Liste_hinzufuegen(name);// Annahme: spielerObjekt ist eine Instanz von Spieler
+    Spielerliste.append(name);
 }
 
 
