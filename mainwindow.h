@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <spieler.h>
+#include "spielfenster.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -30,5 +30,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QStringList Spielerliste;
+    Spielfenster spielfenster;
+
 };
 #endif // MAINWINDOW_H

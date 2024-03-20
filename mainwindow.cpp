@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "spieler.h"
 #include "spielfenster.h"
 
 //#include <QtCore>;
@@ -39,7 +38,6 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
 
 void MainWindow::on_Fertig_clicked()
 {
-    Spielfenster spielfenster;
     spielfenster.setModal(true);
     spielfenster.exec();
 }
