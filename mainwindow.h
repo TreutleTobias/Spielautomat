@@ -25,6 +25,8 @@ private slots:
 
     void on_Spieler_Hinzufuegen_clicked();
 
+    void on_Fertig_clicked();
+
 private:
     Ui::MainWindow *ui;
     Spieler spielerObjekt;

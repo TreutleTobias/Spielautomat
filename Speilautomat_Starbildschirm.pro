@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    spieler.cpp
+    spieler.cpp \
+    spielfenster.cpp
 
 HEADERS += \
     mainwindow.h \
-    spieler.h
+    spieler.h \
+    spielfenster.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    spielfenster.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
