@@ -32,6 +32,8 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
     QString name = ui->Eingabe->text(); // getText() wurde zu text() geändert
 
     Spielerliste.append(name);
+
+    ui->listWidget->addItem(name);
 }
 
 
