@@ -34,6 +34,8 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
     Spielerliste.append(name);
 
     ui->listWidget->addItem(name);
+
+    ui->Eingabe->clear();
 }
 
 
@@ -43,4 +45,14 @@ void MainWindow::on_Fertig_clicked()
     spielfenster.setModal(true);
     spielfenster.exec();
 }
+
+
+void MainWindow::on_Spieler_Loeschen_clicked()
+{
+    QListWidgetItem *item = ui->listWidget->currentItem();
+    if (item) {
+        delete ui->listWidget->takeItem(ui->listWidget->row(item));
+    }
+}
+
 

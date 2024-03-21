@@ -27,6 +27,8 @@ private slots:
 
     void on_Fertig_clicked();
 
+    void on_Spieler_Loeschen_clicked();
+
 private:
     Ui::MainWindow *ui;
     QStringList Spielerliste;
