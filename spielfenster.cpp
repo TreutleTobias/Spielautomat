@@ -15,6 +15,8 @@ Spielfenster::Spielfenster(QWidget *parent)
 
     QPixmap image(s);
     ui->SpinningWheel1->setPixmap(image);
+    ui->SpinningWheel1->setScaledContents( true );
+    ui->SpinningWheel1->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
     ui->SpinningWheel2->setText(s);
 }
 
