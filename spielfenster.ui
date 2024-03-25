@@ -42,9 +42,9 @@
   <widget class="QLabel" name="SpinningWheel2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>320</y>
-     <width>831</width>
+     <x>400</x>
+     <y>200</y>
+     <width>100</width>
      <height>100</height>
     </rect>
    </property>
@@ -63,6 +63,26 @@
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Aktion_Line_Edit">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>350</y>
+     <width>500</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Name_Line_Edit">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>450</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
    </property>
   </widget>
  </widget>

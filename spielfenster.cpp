@@ -14,10 +14,21 @@ Spielfenster::Spielfenster(QWidget *parent)
     QString s = dir.absoluteFilePath("Spielautomat/images/background.png");
 
     QPixmap image(s);
+
+    //Label1
     ui->SpinningWheel1->setPixmap(image);
-    ui->SpinningWheel1->setScaledContents( true );
+    ui->SpinningWheel1->setScaledContents(true);
     ui->SpinningWheel1->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
-    ui->SpinningWheel2->setText(s);
+
+    //Label2
+    ui->SpinningWheel2->setPixmap(image);
+    ui->SpinningWheel2->setScaledContents(true);
+    ui->SpinningWheel2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+    //Label3
+    ui->SpinningWheel3->setPixmap(image);
+    ui->SpinningWheel3->setScaledContents(true);
+    ui->SpinningWheel3->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 Spielfenster::~Spielfenster()
