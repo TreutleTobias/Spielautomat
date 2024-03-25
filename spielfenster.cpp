@@ -1,6 +1,8 @@
 #include "spielfenster.h"
 #include "ui_spielfenster.h"
 #include "QPixmap"
+#include "QDir"
+#include "QFileInfo"
 
 Spielfenster::Spielfenster(QWidget *parent)
     : QDialog(parent)
@@ -8,10 +10,12 @@ Spielfenster::Spielfenster(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QString imagePath = QCoreApplication::applicationFilePath() + "/images/background.png";
-    QPixmap pix(imagePath);
-    ui->SpinningWheel1->setPixmap(pix);
-    ui->SpinningWheel2->setText(imagePath);
+    QDir dir("../");
+    QString s = dir.absoluteFilePath("Spielautomat/images/background.png");
+
+    QPixmap image(s);
+    ui->SpinningWheel1->setPixmap(image);
+    ui->SpinningWheel2->setText(s);
 }
 
 Spielfenster::~Spielfenster()
