@@ -21,7 +21,7 @@ public:
 private slots:
     void on_exit_clicked();
 
-    void on_pushButton_3_clicked();
+
 
     void on_Spieler_Hinzufuegen_clicked();
 
@@ -29,9 +29,13 @@ private slots:
 
     void on_Spieler_Loeschen_clicked();
 
+    //QList<QString> get_Spielerliste(return Spielerliste;);
+
+    QList<QString> get_Spielerliste(const QList<QString>& Spielerliste);
+
 private:
     Ui::MainWindow *ui;
-    QStringList Spielerliste;
+    QList<QString> Spielerliste;
     Spielfenster spielfenster;
 
 };

@@ -31,7 +31,7 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
 {
     QString name = ui->Eingabe->text(); // getText() wurde zu text() geändert
 
-    Spielerliste.append(name);
+    //Spielerliste.append(name);
 
     ui->listWidget->addItem(name);
 
@@ -55,4 +55,9 @@ void MainWindow::on_Spieler_Loeschen_clicked()
     }
 }
 
+QList<QString> get_Spielerliste(const QList<QString>& Spielerliste) {
+    // Hier wäre normalerweise die Logik zum Abrufen der Spielerliste implementiert
+    // Für diese Funktion wird die übergebene Spielerliste einfach zurückgegeben
+    return Spielerliste;
+}
 
