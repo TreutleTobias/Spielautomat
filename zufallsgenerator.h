@@ -12,6 +12,7 @@ public:
     QString selectRandomPlayer(QList<QString> multipliedNames, QList<QString> Spielerliste);
     QList<QString> multiplyNames(QList<QString> names);
     void shuffleList(QList<QString> &list);
+    int8_t randomBild(int16_t RundenseitJackpot);
 };
 
 #endif // ZUFALLSGENERATOR_H

@@ -2,7 +2,7 @@
 #define SPIELFENSTER_H
 
 #include <QDialog>
-
+#include "zufallsgenerator.h"
 namespace Ui {
 class Spielfenster;
 }
