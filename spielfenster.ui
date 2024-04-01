@@ -20,13 +20,13 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
-     <width>121</width>
-     <height>29</height>
+     <y>18</y>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Spiel Beenden</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="SpinningWheel1">
@@ -34,8 +34,8 @@
     <rect>
      <x>150</x>
      <y>240</y>
-     <width>71</width>
-     <height>71</height>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -47,8 +47,8 @@
     <rect>
      <x>270</x>
      <y>240</y>
-     <width>61</width>
-     <height>71</height>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -58,10 +58,10 @@
   <widget class="QLabel" name="SpinningWheel3">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>250</y>
-     <width>81</width>
-     <height>61</height>
+     <x>380</x>
+     <y>240</y>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -88,6 +88,40 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="Background_Label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>601</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Spin_button">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>378</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>Background_Label</zorder>
+  <zorder>Spiel_beenden</zorder>
+  <zorder>Spin_button</zorder>
+  <zorder>SpinningWheel1</zorder>
+  <zorder>SpinningWheel2</zorder>
+  <zorder>SpinningWheel3</zorder>
+  <zorder>Aktion_Line_Edit</zorder>
+  <zorder>Name_Line_Edit</zorder>
  </widget>
  <resources/>
  <connections/>

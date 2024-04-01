@@ -12,7 +12,6 @@ Spielfenster::Spielfenster(QWidget *parent)
 
     QDir dir("../");
     QString s = dir.absoluteFilePath("Spielautomat/images/background.png");
-
     QPixmap image(s);
 
     //Label1
@@ -29,6 +28,15 @@ Spielfenster::Spielfenster(QWidget *parent)
     ui->SpinningWheel3->setPixmap(image);
     ui->SpinningWheel3->setScaledContents(true);
     ui->SpinningWheel3->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+    //background Label
+    QDir spielfenster_rel_pfad("../");
+    QString spielfenster_pfad = dir.absoluteFilePath("Spielautomat/images/mainpage.png");
+    QPixmap spielfenster(spielfenster_pfad);
+
+    ui->Background_Label->setPixmap(spielfenster);
+    ui->Background_Label->setScaledContents(true);
+    ui->Background_Label->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 Spielfenster::~Spielfenster()
