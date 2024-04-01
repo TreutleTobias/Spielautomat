@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>931</width>
-    <height>533</height>
+    <width>601</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="Spiel_beenden">
    <property name="geometry">
@@ -29,10 +32,10 @@
   <widget class="QLabel" name="SpinningWheel1">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>200</y>
-     <width>100</width>
-     <height>100</height>
+     <x>150</x>
+     <y>240</y>
+     <width>71</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -42,10 +45,10 @@
   <widget class="QLabel" name="SpinningWheel2">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>200</y>
-     <width>100</width>
-     <height>100</height>
+     <x>270</x>
+     <y>240</y>
+     <width>61</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +58,10 @@
   <widget class="QLabel" name="SpinningWheel3">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>200</y>
-     <width>100</width>
-     <height>100</height>
+     <x>370</x>
+     <y>250</y>
+     <width>81</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
@@ -68,20 +71,20 @@
   <widget class="QLineEdit" name="Aktion_Line_Edit">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>350</y>
-     <width>500</width>
-     <height>25</height>
+     <x>180</x>
+     <y>380</y>
+     <width>251</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
   <widget class="QLineEdit" name="Name_Line_Edit">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>450</y>
-     <width>250</width>
-     <height>25</height>
+     <x>240</x>
+     <y>460</y>
+     <width>121</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
