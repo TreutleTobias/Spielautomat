@@ -3,6 +3,9 @@
 #include "QPixmap"
 #include "QDir"
 #include "QFileInfo"
+#include "zufallsgenerator.h"
+
+int rundenseitJackpot = 0;
 
 Spielfenster::Spielfenster(QWidget *parent)
     : QDialog(parent)
@@ -47,5 +50,15 @@ Spielfenster::~Spielfenster()
 void Spielfenster::on_Spiel_beenden_clicked()
 {
     close();
+}
+
+
+
+
+void Spielfenster::on_Spin_button_clicked()
+{
+    int8_t bildauswahl1 = Zufallsgenerator::randomBild(rundenseitJackpot);
+
+
 }
 

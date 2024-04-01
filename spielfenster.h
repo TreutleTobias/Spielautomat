@@ -18,6 +18,8 @@ public:
 private slots:
     void on_Spiel_beenden_clicked();
 
+    void on_Spin_button_clicked();
+
 private:
     Ui::Spielfenster *ui;
 };
