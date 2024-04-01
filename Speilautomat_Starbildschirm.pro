@@ -11,12 +11,14 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    spielfenster.cpp
+    spielfenster.cpp \
+    zufallsgenerator.cpp
     spielfenster.cpp
 
 HEADERS += \
     mainwindow.h \
-    spielfenster.h
+    spielfenster.h \
+    zufallsgenerator.h
     spielfenster.h
 
 FORMS += \
@@ -29,4 +31,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    images/background.png
+    images/background.png \
+    images/baer.png \
+    images/cherry.png \
+    images/mainpage.png \
+    images/shot .png
