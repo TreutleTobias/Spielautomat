@@ -4,7 +4,7 @@
 #include <QList>
 #include <QString>
 #include <QTime>
-//#include <cstdlib>
+#include <cstdlib>
 
 void shuffleList(QList<QString> &list) { //shuffle Funktion wird die Adresse einer Liste übergeben und mischt diese durch
 

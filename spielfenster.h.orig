@@ -2,6 +2,11 @@
 #define SPIELFENSTER_H
 
 #include <QDialog>
+#include "zufallsgenerator.h"
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 namespace Ui {
 class Spielfenster;
 }

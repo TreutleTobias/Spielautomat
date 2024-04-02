@@ -3,16 +3,19 @@
 #include "QPixmap"
 #include "QDir"
 #include "QFileInfo"
-#include "ZUFALLSGENERATOR.H"
+#include "zufallsgenerator.h"
 
 int16_t rundenseitJackpot = 0;
-Zufallsgenerator::Zufallsgenerator() {}
 
 Spielfenster::Spielfenster(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Spielfenster)
 {
     ui->setupUi(this);
+
+    QDir dir("../");
+    QString s = dir.absoluteFilePath("Spielautomat/images/background.png");
+    QPixmap image(s);
 
     //Label1
     ui->SpinningWheel1->setPixmap(image);
@@ -54,28 +57,13 @@ void Spielfenster::on_Spiel_beenden_clicked()
 
 void Spielfenster::on_Spin_button_clicked()
 {
-    int8_t wheel1;
-    wheel1 = Zufallsgenerator().randomBild(rundenseitJackpot);
+<<<<<<< Updated upstream
+    int8_t bildauswahl1;
+    bildauswahl1 = Zufallsgenerator::randomBild(rundenseitJackpot);
+=======
+    Zufallsgenerator::multiplyNames();
+    int8_t bildauswahl1 = randomBild(rundenseitJackpot);
+>>>>>>> Stashed changes
 
-    int8_t wheel2;
-    wheel2 = Zufallsgenerator().randomBild(rundenseitJackpot);
-
-    int8_t wheel3;
-    wheel3 = Zufallsgenerator().randomBild(rundenseitJackpot);
-
-    switch(wheel1)
-    {
-    case 1:
-        QDir bild1("../");
-        QString bild1_s = bild1.absoluteFilePath("Spielautomat/images/background.png");
-           break;
-    case 2:
-        QDir bild2("../");
-        QString bild2_s = bild2.absoluteFilePath("Spielautomat/images/background.png");
-        break;
-    default:
-        break;
-
-    }
 }
 
