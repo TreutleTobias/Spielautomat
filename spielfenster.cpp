@@ -189,13 +189,10 @@ void Spielfenster::on_Spin_button_clicked()
 
     QString Ausgabe_Name;
 
-    //Ausgabe_Name = "Tobias"; //Zufallsgenerator().selectRandomPlayer(Zufallsgenerator().multiplyNames(MainWindow().Spielerliste));
-
-    //Ausgabe_Name = Zufallsgenerator().selectRandomPlayer(Zufallsgenerator().multiplyNames(MainWindow().Spielerliste));
-
-
-
+    Ausgabe_Name = Zufallsgenerator().selectRandomPlayer(Zufallsgenerator().multiplyNames(Spielerliste().get_Spielerliste()));
 
     ui->Name_Line->setText(Ausgabe_Name);
+
+
 }
 

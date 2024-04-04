@@ -20,6 +20,7 @@ private slots:
 private:
     Ui::Spielfenster *ui;
 
+
 };
 
 #endif // SPIELFENSTER_H

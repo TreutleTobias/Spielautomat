@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "spielfenster.h"
 #include "zufallsgenerator.h"
+#include "Spielerliste.h"
 #include "QDir"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -18,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->Background_Label->setPixmap(spielfenster);
     ui->Background_Label->setScaledContents(true);
     ui->Background_Label->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
 }
 
 MainWindow::~MainWindow()
@@ -30,11 +32,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_Spieler_Hinzufuegen_clicked()
 {
     QString name = ui->Eingabe->text();
-    Spielerliste.append(name);
+    Spielerliste().spieler_hinzufuegen(name);
     ui->listWidget->addItem(name);
     ui->Eingabe->clear();
 
-    ui->Name_Line->setText(getSpielerAt(1));
+
 
 
 }
@@ -68,14 +70,5 @@ void MainWindow::on_exit_clicked()
     close();
 }
 
-QString MainWindow::getSpielerAt(int index) {
-    if (index >= 0 && index < ui->listWidget->count()) {
-        QListWidgetItem *item = ui->listWidget->item(index);
-        if (item) {
-            return item->text();
-        }
-    }
-    return ""; // Hier könnte auch eine Fehlermeldung oder ein Platzhalterwert zurückgegeben werden
-}
 
 

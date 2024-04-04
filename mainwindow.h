@@ -5,7 +5,7 @@
 #include <QList>
 #include "spielfenster.h"
 #include "zufallsgenerator.h"
-
+#include "Spielerliste.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,9 +31,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QList<QString> Spielerliste;
+
     Spielfenster spielfenster;
     Zufallsgenerator zufallsgenerator;
+    Spielerliste spielerliste;
+
 };
 
 #endif // MAINWINDOW_H
