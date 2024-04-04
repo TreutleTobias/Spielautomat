@@ -2,9 +2,8 @@
 #define SPIELFENSTER_H
 
 #include <QDialog>
-namespace Ui {
-class Spielfenster;
-}
+#include <QList>
+#include "ui_spielfenster.h"
 
 class Spielfenster : public QDialog
 {
@@ -12,11 +11,9 @@ class Spielfenster : public QDialog
 
 public:
     explicit Spielfenster(QWidget *parent = nullptr);
-    ~Spielfenster();
 
 private slots:
     void on_Spiel_beenden_clicked();
-
     void on_Spin_button_clicked();
 
 private:
