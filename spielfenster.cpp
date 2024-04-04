@@ -4,7 +4,9 @@
 #include "QPixmap"
 #include "QDir"
 #include "QFileInfo"
-int rundenseitJackpot;
+
+int rundenseitJackpot = 0;
+
 Spielfenster::Spielfenster(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Spielfenster)
@@ -40,6 +42,10 @@ void Spielfenster::on_Spin_button_clicked()
 
     QString bild1_s, bild2_s, bild3_s; // Deklaration der Variablen außerhalb des switch-Blocks
 
+    if(!(wheel1 == wheel2)&&!(wheel1==wheel2))
+    {
+        rundenseitJackpot++;
+    }
     switch(wheel1)
     {
     case 1:
