@@ -33,6 +33,10 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
     Spielerliste.append(name);
     ui->listWidget->addItem(name);
     ui->Eingabe->clear();
+
+    ui->Name_Line->setText(getSpielerAt(1));
+
+
 }
 
 void MainWindow::on_Fertig_clicked()
@@ -63,4 +67,15 @@ void MainWindow::on_exit_clicked()
 {
     close();
 }
+
+QString MainWindow::getSpielerAt(int index) {
+    if (index >= 0 && index < ui->listWidget->count()) {
+        QListWidgetItem *item = ui->listWidget->item(index);
+        if (item) {
+            return item->text();
+        }
+    }
+    return ""; // Hier könnte auch eine Fehlermeldung oder ein Platzhalterwert zurückgegeben werden
+}
+
 

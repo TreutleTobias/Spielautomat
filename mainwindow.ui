@@ -86,12 +86,26 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="Name_Line">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>130</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>Background_Label</zorder>
    <zorder>Fertig</zorder>
    <zorder>Spieler_Hinzufuegen</zorder>
    <zorder>Spieler_Loeschen</zorder>
    <zorder>Eingabe</zorder>
    <zorder>listWidget</zorder>
+   <zorder>Name_Line</zorder>
   </widget>
  </widget>
  <resources/>

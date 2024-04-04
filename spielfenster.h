@@ -5,6 +5,7 @@
 #include <QList>
 #include "ui_spielfenster.h"
 
+
 class Spielfenster : public QDialog
 {
     Q_OBJECT
@@ -18,6 +19,7 @@ private slots:
 
 private:
     Ui::Spielfenster *ui;
+
 };
 
 #endif // SPIELFENSTER_H

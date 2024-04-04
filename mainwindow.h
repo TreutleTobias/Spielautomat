@@ -6,6 +6,7 @@
 #include "spielfenster.h"
 #include "zufallsgenerator.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,7 +18,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QList<QString> Spielerliste;
+    QString getSpielerAt(int index);
+
 
 private slots:
     void on_exit_clicked();
@@ -29,7 +31,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    //QList<QString> Spielerliste;
+    QList<QString> Spielerliste;
     Spielfenster spielfenster;
     Zufallsgenerator zufallsgenerator;
 };
