@@ -2,12 +2,22 @@
 #include "ui_mainwindow.h"
 #include "spielfenster.h"
 #include "zufallsgenerator.h"
+#include "QDir"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //background Label
+    QDir dir("../"); // Hier wird 'dir' deklariert
+    QString spielfenster_pfad = dir.absoluteFilePath("Spielautomat/images/Startpage.png");
+    QPixmap spielfenster(spielfenster_pfad);
+
+    ui->Background_Label->setPixmap(spielfenster);
+    ui->Background_Label->setScaledContents(true);
+    ui->Background_Label->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 MainWindow::~MainWindow()
@@ -15,10 +25,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_exit_clicked()
-{
-    close();
-}
+
 
 void MainWindow::on_Spieler_Hinzufuegen_clicked()
 {
@@ -46,5 +53,14 @@ void MainWindow::on_Spieler_Loeschen_clicked()
     if (item) {
         delete ui->listWidget->takeItem(ui->listWidget->row(item));
     }
+}
+
+
+
+
+
+void MainWindow::on_exit_clicked()
+{
+    close();
 }
 

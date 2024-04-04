@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QList<QString> Spielerliste;
 
 private slots:
     void on_exit_clicked();
@@ -24,9 +25,11 @@ private slots:
     void on_Fertig_clicked();
     void on_Spieler_Loeschen_clicked();
 
+    void on_on_exit_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QList<QString> Spielerliste;
+    //QList<QString> Spielerliste;
     Spielfenster spielfenster;
     Zufallsgenerator zufallsgenerator;
 };

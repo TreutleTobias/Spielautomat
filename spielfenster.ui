@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>601</width>
+    <width>600</width>
     <height>531</height>
    </rect>
   </property>
@@ -78,16 +78,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Name_Line_Edit">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>460</y>
-     <width>121</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="Background_Label">
    <property name="geometry">
     <rect>
@@ -114,6 +104,25 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="Name_Line">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>460</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Hier steht der Name</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>Background_Label</zorder>
   <zorder>Spiel_beenden</zorder>
   <zorder>Spin_button</zorder>
@@ -121,7 +130,7 @@
   <zorder>SpinningWheel2</zorder>
   <zorder>SpinningWheel3</zorder>
   <zorder>Aktion_Line_Edit</zorder>
-  <zorder>Name_Line_Edit</zorder>
+  <zorder>Name_Line</zorder>
  </widget>
  <resources/>
  <connections/>
