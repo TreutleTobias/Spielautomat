@@ -29,12 +29,6 @@ void Spielfenster::on_Spiel_beenden_clicked()
 
 void Spielfenster::on_Spin_button_clicked()
 {
-
-    //QList<QString> multipliedNames; // Hier sollten Sie die Liste der Namen haben, die Sie von MainWindow erhalten
-    //QString selectedPlayer = Zufallsgenerator::selectRandomPlayer(multipliedNames);
-    // Jetzt können Sie den ausgewählten Spieler verwenden, um die Spiellogik fortzusetzen
-
-
     int8_t wheel1;
     wheel1 = Zufallsgenerator().randomBild(rundenseitJackpot);
 
@@ -44,26 +38,140 @@ void Spielfenster::on_Spin_button_clicked()
     int8_t wheel3;
     wheel3 = Zufallsgenerator().randomBild(rundenseitJackpot);
 
-    QString bild1_s, bild2_s; // Deklaration der Variablen außerhalb des switch-Blocks
+    QString bild1_s, bild2_s, bild3_s; // Deklaration der Variablen außerhalb des switch-Blocks
 
     switch(wheel1)
     {
     case 1:
     {
         QDir bild1("../");
-        bild1_s = bild1.absoluteFilePath("Spielautomat/images/background.png");
+        bild1_s = bild1.absoluteFilePath("Spielautomat/images/cherry.png");
         break;
     }
     case 2:
     {
-
-
         QDir bild2("../");
-        bild2_s = bild2.absoluteFilePath("Spielautomat/images/background.png");
+        bild1_s = bild2.absoluteFilePath("Spielautomat/images/baer.png");
         break;
     }
+
+    case 3:
+    {
+        QDir bild3("../");
+        bild1_s = bild3.absoluteFilePath("Spielautomat/images/shot.png");
+        break;
+    }
+
+    case 4:
+    {
+        QDir bild4("../");
+        bild1_s = bild4.absoluteFilePath("Spielautomat/images/Questionmark.png");
+        break;
+    }
+
+    case 5:
+    {
+        QDir bild5("../");
+        bild1_s = bild5.absoluteFilePath("Spielautomat/images/exclamationmark.png");
+        break;
+    }
+
     default:
         break;
     }
+
+    switch(wheel2)
+    {
+    case 1:
+    {
+        QDir bild1("../");
+        bild2_s = bild1.absoluteFilePath("Spielautomat/images/cherry.png");
+        break;
+    }
+    case 2:
+    {
+        QDir bild2("../");
+        bild2_s = bild2.absoluteFilePath("Spielautomat/images/baer.png");
+        break;
+    }
+
+    case 3:
+    {
+        QDir bild3("../");
+        bild2_s = bild3.absoluteFilePath("Spielautomat/images/shot.png");
+        break;
+    }
+
+    case 4:
+    {
+        QDir bild4("../");
+        bild2_s = bild4.absoluteFilePath("Spielautomat/images/Questionmark.png");
+        break;
+    }
+
+    case 5:
+    {
+        QDir bild5("../");
+        bild2_s = bild5.absoluteFilePath("Spielautomat/images/exclamationmark.png");
+        break;
+    }
+
+    default:
+        break;
+    }
+
+    switch(wheel3)
+    {
+    case 1:
+    {
+        QDir bild1("../");
+        bild3_s = bild1.absoluteFilePath("Spielautomat/images/cherry.png");
+        break;
+    }
+    case 2:
+    {
+        QDir bild2("../");
+        bild3_s = bild2.absoluteFilePath("Spielautomat/images/baer.png");
+        break;
+    }
+
+    case 3:
+    {
+        QDir bild3("../");
+        bild3_s = bild3.absoluteFilePath("Spielautomat/images/shot.png");
+        break;
+    }
+
+    case 4:
+    {
+        QDir bild4("../");
+        bild3_s = bild4.absoluteFilePath("Spielautomat/images/Questionmark.png");
+        break;
+    }
+
+    case 5:
+    {
+        QDir bild5("../");
+        bild3_s = bild5.absoluteFilePath("Spielautomat/images/exclamationmark.png");
+        break;
+    }
+
+    default:
+        break;
+    }
+
+    ui->SpinningWheel1->setPixmap(bild1_s);
+    ui->SpinningWheel1->setScaledContents(true);
+    ui->SpinningWheel1->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+
+    ui->SpinningWheel2->setPixmap(bild2_s);
+    ui->SpinningWheel2->setScaledContents(true);
+    ui->SpinningWheel2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+
+    ui->SpinningWheel3->setPixmap(bild3_s);
+    ui->SpinningWheel3->setScaledContents(true);
+    ui->SpinningWheel3->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
