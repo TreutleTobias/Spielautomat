@@ -2,6 +2,7 @@
 #include "ui_spielfenster.h"
 #include "zufallsgenerator.h"
 #include "mainwindow.h"
+#include "spielerliste.h"
 #include "QPixmap"
 #include "QDir"
 #include "QFileInfo"
@@ -28,6 +29,7 @@ Spielfenster::Spielfenster(QWidget *parent) :
 
 void Spielfenster::on_Spiel_beenden_clicked()
 {
+    Spielerliste().liste_loeschen();
     close();
 }
 

@@ -4,6 +4,7 @@
 #include "zufallsgenerator.h"
 #include "Spielerliste.h"
 #include "QDir"
+#include "QMessageBox"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,9 +32,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Spieler_Hinzufuegen_clicked()
 {
+    bool nameVorhanden = false;
     QString name = ui->Eingabe->text();
-    Spielerliste().spieler_hinzufuegen(name);
+
+    for(int i = 0; i < ui->listWidget->count(); ++i) {
+        // Hole den Text des Listenelements an der aktuellen Position
+        QString aktuellerName = ui->listWidget->item(i)->text();
+        // Vergleiche den aktuellen Namen mit dem zu prüfenden Namen
+        if(aktuellerName == name) {
+            // Der Name ist bereits vorhanden
+            nameVorhanden = true;
+
+            break; // Beenden Sie die Schleife, sobald der Name gefunden wurde
+        }
+    }
+    // Was passiert wenn name nicht vorhanden ist
+    if(nameVorhanden == false){
     ui->listWidget->addItem(name);
+    }else {
+        QMessageBox::information(this,tr("Fehlermeldung"),tr("Name ist bereits"));
+    }
+
     ui->Eingabe->clear();
 
 
@@ -43,14 +62,19 @@ void MainWindow::on_Spieler_Hinzufuegen_clicked()
 
 void MainWindow::on_Fertig_clicked()
 {
-    /*QList<QString> multipliedNames = Zufallsgenerator::multiplyNames(Spielerliste);
-    QString selectedPlayer = Zufallsgenerator::selectRandomPlayer(multipliedNames);
-    // Hier können Sie die Instanz von Spielfenster verwenden und die Logik für die Spielstartseite implementieren
-    spielfenster.show(); // Zeigen Sie das Spielfenster an*/
 
+    if(ui->listWidget->count() == 0){
+        QMessageBox::information(this,tr("Fehlermeldung"),tr("Bitte Spieler eintragen!"));
+    } else{
+        for(int i = 0; i < ui->listWidget->count(); ++i) {
+            // Hole den Text des Listenelements an der aktuellen Position und füge ihn zur Ergebnisliste hinzu
+            Spielerliste().spieler_hinzufuegen(ui->listWidget->item(i)->text());
+
+
+        }
     spielfenster.setModal(true);
     spielfenster.exec();
-
+     }
 }
 
 void MainWindow::on_Spieler_Loeschen_clicked()
@@ -59,10 +83,8 @@ void MainWindow::on_Spieler_Loeschen_clicked()
     if (item) {
         delete ui->listWidget->takeItem(ui->listWidget->row(item));
     }
+
 }
-
-
-
 
 
 void MainWindow::on_exit_clicked()
