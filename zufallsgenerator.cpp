@@ -4,7 +4,7 @@
 
 Zufallsgenerator::Zufallsgenerator() {}
 
-
+//Kreieren eines Pools in dem jeder Name vier mal vorkommt
 QList<QString> Zufallsgenerator::multiplyNames(const QList<QString>& names) {
     QList<QString> multipliedNames;
     for (const QString &name : names) {
@@ -16,13 +16,13 @@ QList<QString> Zufallsgenerator::multiplyNames(const QList<QString>& names) {
     std::random_shuffle(multipliedNames.begin(), multipliedNames.end());
     return multipliedNames;
 }
-
+//Auswählen eines Spielers aus des Pools ohne Zurücklegen um besser verteilte Gewinner zu erhalten
 QString Zufallsgenerator::selectRandomPlayer(const QList<QString>& multipliedNames) {
     int index = std::rand() % multipliedNames.size();
     QString selectedPlayer = multipliedNames[index];
     return selectedPlayer;
 }
-
+//Die Random Bild Methode wählt je nachdem wie lange kein Jackpot mehr kam die wahrscheinlichkeit für einen Jackpot
 int Zufallsgenerator::randomBild(int rundenseitJackpot) {
     int array[4][20] = {{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5},
                         {1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5},

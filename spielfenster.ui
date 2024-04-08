@@ -21,8 +21,8 @@
     <rect>
      <x>20</x>
      <y>18</y>
-     <width>51</width>
-     <height>41</height>
+     <width>91</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -68,16 +68,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Aktion_Line_Edit">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>380</y>
-     <width>251</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="Background_Label">
    <property name="geometry">
     <rect>
@@ -94,10 +84,10 @@
   <widget class="QPushButton" name="Spin_button">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>378</y>
-     <width>71</width>
-     <height>41</height>
+     <x>490</x>
+     <y>370</y>
+     <width>101</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -107,11 +97,16 @@
   <widget class="QLabel" name="Name_Line">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>460</y>
-     <width>121</width>
-     <height>21</height>
+     <x>180</x>
+     <y>380</y>
+     <width>251</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
@@ -129,7 +124,6 @@
   <zorder>SpinningWheel1</zorder>
   <zorder>SpinningWheel2</zorder>
   <zorder>SpinningWheel3</zorder>
-  <zorder>Aktion_Line_Edit</zorder>
   <zorder>Name_Line</zorder>
  </widget>
  <resources/>

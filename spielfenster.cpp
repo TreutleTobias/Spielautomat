@@ -6,6 +6,7 @@
 #include "QPixmap"
 #include "QDir"
 #include "QFileInfo"
+#include "QMessageBox"
 
 
 int rundenseitJackpot = 0;
@@ -24,6 +25,25 @@ Spielfenster::Spielfenster(QWidget *parent) :
     ui->Background_Label->setPixmap(spielfenster);
     ui->Background_Label->setScaledContents(true);
     ui->Background_Label->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+    // Spin Button Hintergrundbild hinzufügen
+    QString Spin_pfad = dir.absoluteFilePath("Spielautomat/images/Spin.png");
+    ui->Spin_button->setStyleSheet("QPushButton {"
+                              "background-image: url('"+Spin_pfad +"');"
+                                              "background-repeat: no-repeat;"
+                                              "background-position: center;"
+                                              "border: none;"  // entfernen Sie die Rahmen des Buttons
+                                              "}");
+
+    // Spin Button Hintergrundbild hinzufügen
+    QString Beenden_pfad = dir.absoluteFilePath("Spielautomat/images/Beenden.png");
+    ui->Spiel_beenden->setStyleSheet("QPushButton {"
+                                   "background-image: url('"+Beenden_pfad +"');"
+                                                 "background-repeat: no-repeat;"
+                                                 "background-position: center;"
+                                                 "border: none;"  // entfernen Sie die Rahmen des Buttons
+                                                 "}");
+
 
 }
 
@@ -46,13 +66,7 @@ void Spielfenster::on_Spin_button_clicked()
 
     QString bild1_s, bild2_s, bild3_s; // Deklaration der Variablen außerhalb des switch-Blocks
 
-    if(!(wheel1 == wheel2 && wheel1==wheel3))
-    {
-        if (rundenseitJackpot >= 32){
-            rundenseitJackpot = 0;
-        }
-        rundenseitJackpot++;
-    }
+
     switch(wheel1)
     {
     case 1:
@@ -195,6 +209,18 @@ void Spielfenster::on_Spin_button_clicked()
 
     ui->Name_Line->setText(Ausgabe_Name);
 
+    if(!(wheel1 == wheel2 && wheel1==wheel3))
+    {
+        if (rundenseitJackpot >= 128){
+            rundenseitJackpot = 0;
+        }
+        rundenseitJackpot++;
 
+    }
+    // Aufruf MessageBox, wenn es drei gleiche Symbole sind
+    if(wheel1 == wheel2 && wheel1==wheel3)
+    {
+    QMessageBox::information(this,tr("Jackpot"),tr("Du hast gewonnen"));
+    }
 }
 
