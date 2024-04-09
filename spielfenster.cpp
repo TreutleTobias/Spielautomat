@@ -29,20 +29,20 @@ Spielfenster::Spielfenster(QWidget *parent) :
     // Spin Button Hintergrundbild hinzufügen
     QString Spin_pfad = dir.absoluteFilePath("Spielautomat/images/Spin.png");
     ui->Spin_button->setStyleSheet("QPushButton {"
-                              "background-image: url('"+Spin_pfad +"');"
-                                              "background-repeat: no-repeat;"
-                                              "background-position: center;"
-                                              "border: none;"  // entfernen Sie die Rahmen des Buttons
-                                              "}");
-
-    // Spin Button Hintergrundbild hinzufügen
-    QString Beenden_pfad = dir.absoluteFilePath("Spielautomat/images/Beenden.png");
-    ui->Spiel_beenden->setStyleSheet("QPushButton {"
-                                   "background-image: url('"+Beenden_pfad +"');"
+                                   "background-image: url('"+Spin_pfad +"');"
                                                  "background-repeat: no-repeat;"
                                                  "background-position: center;"
                                                  "border: none;"  // entfernen Sie die Rahmen des Buttons
                                                  "}");
+
+    // Spin Button Hintergrundbild hinzufügen
+    QString Beenden_pfad = dir.absoluteFilePath("Spielautomat/images/Beenden.png");
+    ui->Spiel_beenden->setStyleSheet("QPushButton {"
+                                     "background-image: url('"+Beenden_pfad +"');"
+                                                      "background-repeat: no-repeat;"
+                                                      "background-position: center;"
+                                                      "border: none;"  // entfernen Sie die Rahmen des Buttons
+                                                      "}");
 
 
 }
@@ -55,22 +55,27 @@ void Spielfenster::on_Spiel_beenden_clicked()
 
 void Spielfenster::on_Spin_button_clicked()
 {
+    //Zufallsgenerator für 1. Rad
     int8_t wheel1;
     wheel1 = Zufallsgenerator().randomBild(rundenseitJackpot);
 
+    //Zufallsgenerator für 2. Rad
     int8_t wheel2;
     wheel2 = Zufallsgenerator().randomBild(rundenseitJackpot);
 
+    //Zufallsgenerator für 3. Rad
     int8_t wheel3;
     wheel3 = Zufallsgenerator().randomBild(rundenseitJackpot);
 
+    //Bildstrings initialisieren, um den jeweiligen Pfad zu erhalten
     QString bild1_s, bild2_s, bild3_s; // Deklaration der Variablen außerhalb des switch-Blocks
 
-
+    //Switch case 1, für 1. Rad, je nach dem was zufallsgenerator liefert wird unterschiedlicher String in bild1_s gespeichert
     switch(wheel1)
     {
     case 1:
     {
+        //QDir-> SPeicherort von Programm lokal, bild1_s: summe aus speicherort plus pfad im speicherort für bild
         QDir bild1("../");
         bild1_s = bild1.absoluteFilePath("Spielautomat/images/cherry.png");
         break;
@@ -107,6 +112,7 @@ void Spielfenster::on_Spin_button_clicked()
         break;
     }
 
+    //Switch case 2, für 2. Rad, je nach dem was zufallsgenerator liefert wird unterschiedlicher String in bild1_s gespeichert
     switch(wheel2)
     {
     case 1:
@@ -147,6 +153,7 @@ void Spielfenster::on_Spin_button_clicked()
         break;
     }
 
+    //Switch case 3, für 3. Rad, je nach dem was zufallsgenerator liefert wird unterschiedlicher String in bild1_s gespeichert
     switch(wheel3)
     {
     case 1:
@@ -187,6 +194,7 @@ void Spielfenster::on_Spin_button_clicked()
         break;
     }
 
+    //Anzeigen der Bilder in den einzelnen "Rädern"
     ui->SpinningWheel1->setPixmap(bild1_s);
     ui->SpinningWheel1->setScaledContents(true);
     ui->SpinningWheel1->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
@@ -209,6 +217,7 @@ void Spielfenster::on_Spin_button_clicked()
 
     ui->Name_Line->setText(Ausgabe_Name);
 
+    //Wahrscheinlichkeit für Jackpot erhöhen, wenn er lange nicht kam
     if(!(wheel1 == wheel2 && wheel1==wheel3))
     {
         if (rundenseitJackpot >= 128){
@@ -217,10 +226,13 @@ void Spielfenster::on_Spin_button_clicked()
         rundenseitJackpot++;
 
     }
+
+    //Jackpot Message Box, Anzeige des Namens und der Aktion
+    QString ausgabefeld = Ausgabe_Name + " wird einen Shot verköstigen";
     // Aufruf MessageBox, wenn es drei gleiche Symbole sind
     if(wheel1 == wheel2 && wheel1==wheel3)
     {
-    QMessageBox::information(this,tr("Jackpot"),tr("Du hast gewonnen"));
+        QMessageBox::information(this,tr("Jackpot"),ausgabefeld);
     }
 }
 
